@@ -1,0 +1,101 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>Mini Code Editor</h1>
+            </div>
+            <div class="controls">
+                <button id="runBtn" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Run Code
+                </button>
+                <button id="clearBtn" class="btn btn-warning">
+                    <i class="fas fa-broom"></i> Clear All
+                </button>
+                <button id="saveBtn" class="btn btn-success">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button id="loadBtn" class="btn btn-info">
+                    <i class="fas fa-folder-open"></i> Load Saved
+                </button>
+                <div class="toggle-container">
+                    <input type="checkbox" id="autoRunToggle">
+                    <label for="autoRunToggle" class="toggle-label">
+                        <i class="fas fa-bolt"></i> Auto-run
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="editors-section">
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="code-editor" id="htmlEditor" data-language="html"></div>
+                </div>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="code-editor" id="cssEditor" data-language="css"></div>
+                </div>
+                
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="code-editor" id="jsEditor" data-language="javascript"></div>
+                </div>
+            </section>
+            
+            <section class="preview-section">
+                <div class="preview-header">
+                    <i class="fas fa-eye"></i>
+                    <h3>Live Preview</h3>
+                    <div class="preview-controls">
+                        <button id="refreshPreview" class="btn btn-small">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-container">
+                    <iframe id="previewFrame" title="Live Preview"></iframe>
+                    <div class="preview-placeholder" id="previewPlaceholder">
+                        <i class="fas fa-code"></i>
+                        <p>Click "Run Code" to see the result</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Made with <i class="fas fa-heart"></i> | Mini Code Editor</p>
+            <div class="footer-info">
+                <kbd>Ctrl + S</kbd> to Save | 
+                <kbd>Ctrl + L</kbd> to Load | 
+                <kbd>Ctrl + R</kbd> to Run
+            </div>
+        </footer>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
